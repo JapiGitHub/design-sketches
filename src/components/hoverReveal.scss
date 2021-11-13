@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+.fullscreen {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.hoverreveal-container {
+  overflow: hidden;
+
+  .vino-card {
+    position: absolute;
+    top: 20vh;
+    left: 20vw;
+    height: 40vh;
+    width: 20vw;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transform: skew(-40deg);
+
+    article {
+      overflow: hidden;
+      margin-top: 1vh;
+      height: 100%;
+      border: 2px solid rgba(255, 255, 255, 0.07);
+
+      .text-card {
+        z-index: 20;
+
+        h3 {
+          padding-left: 3vw;
+          z-index: 20;
+        }
+
+        p {
+          z-index: 20;
+        }
+
+        transform: skew(40deg);
+
+        padding: 0vh 3vw 0vh 1vw;
+        width: 100%;
+        height: 100%;
+        margin: 0 0 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        transition: all 0.6s ease;
+        img {
+          position: absolute;
+          top: -25%;
+          left: -25%;
+
+          width: 150%;
+          object-fit: cover;
+
+          z-index: 2;
+          opacity: 0;
+          transition: all 0.6s ease;
+        }
+      }
+    }
+
+    article:hover {
+      .text-card {
+        margin: 0 -2vh 0 -2vh;
+
+        img {
+          margin: 0 2vh 0 2vh;
+
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+
+  .second {
+    top: 40vh;
+    left: 11.5vw;
+  }
+}

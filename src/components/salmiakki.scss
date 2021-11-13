@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Raleway", sans-serif;
+
+  font-weight: 200;
+}
+
+.fullscreen {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.allcontainer {
+  background-color: rgb(53, 54, 18);
+  position: absolute;
+
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.8);
+
+  .texts-container {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2vh;
+    border: 1px solid red;
+
+    display: grid;
+    place-items: center;
+    z-index: 30;
+    #title {
+      z-index: 30;
+      font-size: 3.5vh;
+      font-weight: 600;
+      padding-top: 10vh;
+      letter-spacing: 0.6vw;
+    }
+
+    div {
+      z-index: 30;
+      display: flex;
+
+      aside {
+        z-index: 330;
+        color: rgba(255, 255, 255, 0.8);
+        font-family: "Caveat", cursive;
+
+        font-weight: 100;
+        letter-spacing: 0.2vw;
+        font-size: 7vh;
+        transition: all 0.2s ease;
+        z-index: 9000;
+      }
+      aside:hover {
+        transform: scale(1.5) translateY(-2vh);
+      }
+    }
+    .lower-text {
+      z-index: 30;
+
+      padding: 1vh 1vw 1vh 1vw;
+      font-weight: 400;
+      margin-bottom: 3vh;
+
+      letter-spacing: 0.5vw;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .grid-lines {
+    z-index: 29;
+    transform-origin: center;
+
+    transform: rotate(45deg);
+    position: absolute;
+    top: -25vw;
+    left: -25.1vw;
+    width: 150vw;
+    height: 150vw;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    gap: 0px;
+    grid-template-rows: repeat(14, 1fr);
+
+    div {
+      //transition: all 2s ease;
+      transform: scale(1);
+
+      aside {
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+
+        transition: all 4s ease;
+        transform: scale(1);
+        opacity: 0;
+
+        animation: appear 1s ease forwards;
+        @keyframes appear {
+          0% {
+            transform: scale(0.3) rotate(-45deg);
+
+            opacity: 1;
+          }
+          50% {
+            transform: scale(0.3) rotate(0);
+          }
+          100% {
+            transform: scale(1) rotate(0);
+
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+
+    div:hover {
+      aside {
+        transition: all 0.3s ease;
+        transform: scale(0.3);
+      }
+    }
+  }
+
+  #wheat-pic {
+    position: absolute;
+
+    object-fit: cover;
+    z-index: 10;
+  }
+
+  .svg-container {
+    display: grid;
+    place-items: center;
+    position: absolute;
+
+    z-index: 11;
+
+    #loading-wheat-video {
+      width: 20vw;
+      height: 20vw;
+      z-index: 999;
+
+      #sisempi {
+        transform-origin: center;
+        animation: clockwise 2s alternate infinite;
+        @keyframes clockwise {
+          0% {
+            transform: rotate(0deg) scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: rotate(360deg) scale(0.2);
+            opacity: 0.5;
+          }
+        }
+      }
+
+      #ulompi {
+        transform-origin: center;
+        opacity: 0.5;
+        transform: rotate(0deg) scale(1.2);
+
+        animation: counterclockwise 2s alternate infinite;
+        @keyframes counterclockwise {
+          0% {
+            transform: rotate(0deg) scale(1.2);
+            opacity: 0.5;
+          }
+          100% {
+            transform: rotate(-360deg) scale(1);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  #wheat-video {
+    opacity: 1;
+    position: absolute;
+
+    object-fit: cover;
+    z-index: 12;
+
+    //5sekunnin latausaika simuloitu videolle:
+    //animation: loading-simulation 5s ease forwards;
+    //opacity: 0;
+    @keyframes loading-simulation {
+      0% {
+        opacity: 0;
+      }
+
+      80% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+}
