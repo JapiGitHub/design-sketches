@@ -13,7 +13,7 @@
 }
 
 .vinomenu-container {
-  overflow: hidden;
+  overflow: clip;
   background-color: black;
 
   -webkit-user-select: none; /* Safari */
@@ -21,67 +21,86 @@
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 
-  .vinomenu-title {
-    position: absolute;
-    top: 40vh;
-    right: -90vw;
-    width: 130vw;
-    height: 10vh;
-    //border: 1px solid red;
-    font-size: 4rem;
-    font-family: "Work Sans", sans-serif;
+  .gradient-container {
+    overflow: clip;
+    #vino-upper-gradient {
+      width: 200vw;
+      margin-left: 00vw;
+      margin-top: -00vh;
+      height: 70vh;
+      background: linear-gradient(0deg, rgb(0, 0, 0), rgb(40, 81, 87));
+      transform: rotate(35deg);
+      z-index: 200;
+    }
+  }
 
-    font-weight: 100;
-    display: flex;
-    z-index: 200;
+  .title-container {
+    .vinomenu-title {
+      position: absolute;
+      top: 40vh;
+      right: 0vw;
+      width: 100vw;
+      overflow: hidden;
+      height: 30vh;
+      //border: 1px solid red;
+      font-size: 4rem;
+      font-family: "Work Sans", sans-serif;
 
-    .item-text-container {
-      opacity: 0.15;
-
+      font-weight: 100;
       display: flex;
-      flex-direction: column;
       z-index: 200;
 
-      .title-small-number {
-        font-size: 1rem;
-        text-align: right;
-        margin-bottom: 3vh;
-        letter-spacing: 0.2vw;
+      .item-text-container {
+        opacity: 0.15;
+        padding-left: 2vw;
+        display: flex;
+        flex-direction: column;
+        z-index: 200;
+
+        .title-small-number {
+          font-size: 1rem;
+          text-align: right;
+          margin-bottom: 3vh;
+          letter-spacing: 0.2vw;
+        }
+
+        .item-title {
+          width: 30vw;
+          text-align: right;
+
+          font-size: 2.5rem;
+          letter-spacing: 0.3vw;
+          z-index: 999;
+        }
+        .item-text {
+          margin-top: 4vh;
+          text-align: right;
+          font-style: italic;
+          font-weight: 400;
+          color: rgba(255, 255, 255, 0.4);
+          letter-spacing: 0.15vw;
+
+          font-size: 1.2rem;
+          z-index: 999;
+        }
+      }
+      .item-text-container:first-child {
+        padding-left: 55vw;
       }
 
-      .item-title {
-        width: 30vw;
-        text-align: right;
-
-        font-size: 2.5rem;
-        letter-spacing: 0.3vw;
-        z-index: 999;
+      .chosen-text {
+        opacity: 1;
       }
-      .item-text {
-        margin-top: 4vh;
-        text-align: right;
-        font-style: italic;
-        font-weight: 400;
-        color: rgba(255, 255, 255, 0.4);
-        letter-spacing: 0.15vw;
-
-        font-size: 1.2rem;
-        z-index: 999;
-      }
-    }
-
-    .chosen-text {
-      opacity: 1;
     }
   }
 
   .menu-items-container {
-    width: 10vw;
+    width: 20vw;
     height: 200vh;
 
     position: absolute;
-    top: 0vh;
-    left: -20vw;
+    top: -0vh;
+    left: -10vw;
 
     transform-origin: bottom left;
     transform: rotate(35deg);
@@ -100,62 +119,64 @@
     .vino-anim {
     }
 
-    .menu-item {
-      overflow: hidden;
-      //opacity: 0.15;
-      width: 10vw;
-      height: 200px;
-      border: 1px solid white;
-      display: grid;
-      place-items: center;
-      margin-bottom: 10px;
-      margin-top: 10px;
+    .number-pic-container {
+      display: flex;
+      .item-number {
+        margin-bottom: 10px;
+        margin-left: 1vw;
+        color: rgba(255, 255, 255, 0.15);
+        display: flex;
 
-      border-radius: 0 20% 0 20%;
+        align-items: flex-end;
+      }
 
-      .vinomenu-pic-number {
-        position: absolute;
-        width: 10vh;
-        height: 10vh;
-
-        transform: rotate(-35deg);
-
-        color: white;
-        z-index: 1005;
-        font-size: 1.5rem;
+      .menu-item {
+        overflow: clip;
+        //opacity: 0.15;
+        width: 10vw;
+        height: 200px;
+        border: 1px solid white;
         display: grid;
         place-items: center;
-        transition: all 0.3s ease;
-        opacity: 1;
-      }
+        margin-bottom: 10px;
+        margin-top: 10px;
 
-      .hide-pic-number {
-        opacity: 0;
-      }
+        border-radius: 0 20% 0 20%;
 
-      img {
-        height: 300px;
-        //object-fit: fit;
-        transform: rotate(-35deg) translateY(-140px);
-        transform-origin: center;
-      }
-      video {
-        height: 300px;
-        //object-fit: fit;
-        transform: rotate(-35deg) translateY(-140px);
-        transform-origin: center;
-        z-index: 2;
-      }
-    }
+        .vinomenu-pic-number {
+          position: absolute;
+          width: 10vh;
+          height: 10vh;
 
-    #vino-upper-gradient {
-      width: 200vw;
-      margin-left: -80vw;
-      margin-top: -100vh;
-      height: 70vh;
-      background: linear-gradient(0deg, rgb(0, 0, 0), rgb(40, 81, 87));
+          transform: rotate(-35deg);
 
-      z-index: -2;
+          color: white;
+          z-index: 1005;
+          font-size: 1.5rem;
+          display: grid;
+          place-items: center;
+          transition: all 0.3s ease;
+          opacity: 1;
+        }
+
+        .hide-pic-number {
+          opacity: 0;
+        }
+
+        img {
+          height: 300px;
+          //object-fit: fit;
+          transform: rotate(-35deg) translateY(-140px);
+          transform-origin: center;
+        }
+        video {
+          height: 300px;
+          //object-fit: fit;
+          transform: rotate(-35deg) translateY(-140px);
+          transform-origin: center;
+          z-index: 2;
+        }
+      }
     }
   }
 
@@ -186,7 +207,6 @@
     }
 
     .lowbar-button:hover {
-      background: linear-gradient(225deg, rgb(0, 0, 0), rgb(40, 81, 87));
       transform: scale(1.2);
       color: white;
 
