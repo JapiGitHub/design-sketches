@@ -113,7 +113,9 @@ export default function VinoMenu() {
           {selectedTextTitle.map((button, idx) => {
             return (
               <div
-                className="lowbar-button button-anim"
+                className={`lowbar-button button-anim ${
+                  chosenMenuItem === idx ? "chosen-low-button" : null
+                }`}
                 onMouseEnter={(e) => {
                   setChosenMenuItem(idx);
                 }}
