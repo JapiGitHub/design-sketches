@@ -16,6 +16,11 @@
   overflow: hidden;
   background-color: black;
 
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+
   .vinomenu-title {
     position: absolute;
     top: 40vh;
@@ -167,18 +172,26 @@
     .lowbar-button {
       margin: 3px 0px 3px 3px;
       width: 10vh;
-      height: auto;
-      display: grid;
-      place-items: center;
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
       border: 1px solid rgba(255, 255, 255, 0.192);
       background-color: rgba(255, 255, 255, 0);
       border-radius: 0% 20% 20% 20%;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.4);
       transition: all 0.2s ease;
+      padding-bottom: 0vh;
     }
 
     .lowbar-button:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      background: linear-gradient(225deg, rgb(0, 0, 0), rgb(40, 81, 87));
       transform: scale(1.2);
+      color: white;
+
+      padding-bottom: 3vh;
+      font-size: 2rem;
     }
   }
 }

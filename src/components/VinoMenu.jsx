@@ -104,7 +104,7 @@ export default function VinoMenu() {
                   setChosenMenuItem(idx);
                 }}
               >
-                #{(idx + 1).toString().padStart(2, "0")}
+                _{(idx + 1).toString().padStart(2, "0")}
               </div>
             );
           })}
